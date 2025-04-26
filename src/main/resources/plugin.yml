@@ -9,4 +9,5 @@ depend:
   - GameAPI
   - Tips
   - RsNPC
+softdepend:
   - HealthAPI
