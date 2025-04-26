@@ -1,0 +1,11 @@
+name: BedFight
+main: cn.glorydark.nukkit.example.GameMain
+version: "1.0.0"
+api: "1.0.0"
+author: glorydark
+description: Example
+load: POSTWORLD
+depend:
+  - GameAPI
+  - Tips
+  - RsNPC
