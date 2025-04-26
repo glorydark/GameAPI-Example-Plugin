@@ -2,6 +2,7 @@ package cn.glorydark.nukkit.example;
 
 import cn.glorydark.nukkit.example.command.ExampleCommand;
 import cn.glorydark.nukkit.example.listener.BedFightListener;
+import cn.nukkit.Server;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.Config;
 import com.smallaswater.npc.variable.VariableManage;
@@ -23,11 +24,17 @@ public class GameMain extends PluginBase {
 
     public static String backSpawn;
 
+    public static boolean healthAPIEnabled;
+
     @Override
     public void onEnable() {
         instance = this;
         path = this.getDataFolder().getPath();
         this.saveDefaultConfig();
+        healthAPIEnabled = Server.getInstance().getPluginManager().getPlugin("HealthAPI") != null;
+        if (healthAPIEnabled) {
+            this.getLogger().info("HealthAPI support enabled!");
+        }
         this.reload();
         GameListenerRegistry.registerEvents(GAME_NAME, new BedFightListener(), this);
         this.getServer().getCommandMap().register("", new ExampleCommand("test"));

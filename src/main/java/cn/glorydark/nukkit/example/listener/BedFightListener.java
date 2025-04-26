@@ -1,5 +1,7 @@
 package cn.glorydark.nukkit.example.listener;
 
+import cn.glorydark.nukkit.example.GameMain;
+import cn.nukkit.Player;
 import gameapi.event.block.RoomBlockBreakEvent;
 import gameapi.event.block.RoomBlockPlaceEvent;
 import gameapi.event.player.RoomPlayerDeathEvent;
@@ -12,6 +14,7 @@ import gameapi.event.room.RoomGameStartTickEvent;
 import gameapi.event.room.RoomPreStartEvent;
 import gameapi.listener.base.annotations.GameEventHandler;
 import gameapi.listener.base.interfaces.GameListener;
+import healthapi.PlayerHealth;
 
 /**
  * @author glorydark
@@ -60,11 +63,19 @@ public class BedFightListener implements GameListener {
 
     @GameEventHandler
     public void onJoin(RoomPlayerJoinEvent event) {
-
+        Player player = event.getPlayer();
+        if (GameMain.healthAPIEnabled) {
+            PlayerHealth playerHealth = PlayerHealth.getPlayerHealth(player);
+            playerHealth.setEnable(true);
+        }
     }
 
     @GameEventHandler
     public void onLeave(RoomPlayerLeaveEvent event) {
-
+        Player player = event.getPlayer();
+        if (GameMain.healthAPIEnabled) {
+            PlayerHealth playerHealth = PlayerHealth.getPlayerHealth(player);
+            playerHealth.setEnable(true);
+        }
     }
 }
