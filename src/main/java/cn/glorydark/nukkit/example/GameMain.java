@@ -1,7 +1,7 @@
 package cn.glorydark.nukkit.example;
 
 import cn.glorydark.nukkit.example.command.ExampleCommand;
-import cn.glorydark.nukkit.example.listener.BedFightListener;
+import cn.glorydark.nukkit.example.listener.TestListener;
 import cn.nukkit.Server;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.Config;
@@ -36,7 +36,7 @@ public class GameMain extends PluginBase {
             this.getLogger().info("HealthAPI support enabled!");
         }
         this.reload();
-        GameListenerRegistry.registerEvents(GAME_NAME, new BedFightListener(), this);
+        GameListenerRegistry.registerEvents(GAME_NAME, new TestListener(), this);
         this.getServer().getCommandMap().register("", new ExampleCommand("test"));
         Api.registerVariables(GAME_NAME, TipsVariable.class);
         VariableManage.addVariableV2(GAME_NAME, RsNPCVariable.class);

@@ -19,15 +19,10 @@ import healthapi.PlayerHealth;
 /**
  * @author glorydark
  */
-public class BedFightListener implements GameListener {
+public class TestListener implements GameListener {
 
     @GameEventHandler
     public void RoomPreStartEvent(RoomPreStartEvent event) {
-
-    }
-
-    @GameEventHandler
-    public void RoomPlayerRespawnEvent(RoomPlayerRespawnEvent event) {
 
     }
 
@@ -42,22 +37,12 @@ public class BedFightListener implements GameListener {
     }
 
     @GameEventHandler
-    public void RoomBlockBreakEvent(RoomBlockBreakEvent event) {
-
-    }
-
-    @GameEventHandler
     public void RoomPlayerDeathEvent(RoomPlayerDeathEvent event) {
 
     }
 
     @GameEventHandler
     public void RoomGameEndEvent(RoomGameEndEvent event) {
-
-    }
-
-    @GameEventHandler
-    public void RoomBlockPlaceEvent(RoomBlockPlaceEvent event) {
 
     }
 
